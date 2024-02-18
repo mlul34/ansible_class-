@@ -1,0 +1,15 @@
+---
+
+- hosts: all
+  become: true
+  tasks:
+
+  - name: install latest version of apache
+    yum:
+      name: httpd
+      state: latest
+  - name: update repository index
+    yum:
+      update_cache: yes
+      state: latest
+
